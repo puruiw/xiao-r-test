@@ -21,7 +21,7 @@ def set_servo_angle(servo, angle):
 
 set_servo_angle(1, 0)
 time.sleep(1)
-print(get_servo_angle(1))
+#print(get_servo_angle(1))
 
 set_servo_angle(2, 0)
 for i in range(0, 90):
