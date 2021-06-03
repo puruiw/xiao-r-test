@@ -17,6 +17,9 @@ MOTOR_R_IN2 = 16
 SERVO_SM_BUS = 1
 SERVO_I2C_ADDR = 0x17
 
+CAMERA_PITCH_SERVO_ID = 1
+CAMERA_YAW_SERVO_ID = 2
+
 
 class XiaoRRobot(object):
   def __init__(self) -> None:
@@ -26,8 +29,8 @@ class XiaoRRobot(object):
       self.motor_l = motor.Motor(MOTOR_L_EN, MOTOR_L_IN1, MOTOR_L_IN2)
       self.motor_r = motor.Motor(MOTOR_R_EN, MOTOR_R_IN1, MOTOR_R_IN2)
 
-      self.camera_pitch_servo = servo.Servo(self.smbus, SERVO_I2C_ADDR, 1)
-      self.camera_yaw_servo = servo.Servo(self.smbus, SERVO_I2C_ADDR, 2)
+      self.camera_pitch_servo = servo.Servo(self.smbus, SERVO_I2C_ADDR, CAMERA_PITCH_SERVO_ID)
+      self.camera_yaw_servo = servo.Servo(self.smbus, SERVO_I2C_ADDR, CAMERA_YAW_SERVO_ID)
 
       self.components = [self.sonar, self.motor_l, self.motor_r, self.camera_pitch_servo, self.camera_yaw_servo]
 

@@ -7,6 +7,7 @@ class Servo(object):
     self.smbus = smbus
     self.i2c_addr = i2c_addr
     self.servo_id = servo_id
+    self.angle_target = None
 
   def init(self):
     pass
@@ -15,6 +16,7 @@ class Servo(object):
     pass
 
   def set_angle(self, angle):
+    self.angle_target = angle
     self.smbus.write_byte_data(self.i2c_addr, 255, self.servo_id)
-    self.smbus.write_byte_data(self.i2c_addr, angle, 255)    
+    self.smbus.write_byte_data(self.i2c_addr, angle, 255)
     
