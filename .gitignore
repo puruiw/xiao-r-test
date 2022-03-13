@@ -1,3 +1,6 @@
+# Visual Studio Code
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -48,10 +51,6 @@ srv/_*.py
 *.pyc
 qtcreator-*
 *.user
-
-/planning/cfg
-/planning/docs
-/planning/src
 
 *~
 
