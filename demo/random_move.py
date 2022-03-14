@@ -4,16 +4,17 @@ import time
 from my_robot.xiao_r_robot import XiaoRRobot
 
 
-def move_till_hit(r, max_time):
+def move_till_hit(robot: XiaoRRobot, max_time_s):
+  """Run for max_time_s or until sonar detects something within 0.5m."""
   start = time.time()
-  r.start_forward(0.7)
-  while time.time() < start + max_time:
-    distance = r.sonar.get_distance()
+  robot.start_forward(0.7)
+  while time.time() < start + max_time_s:
+    distance = robot.sonar.get_distance()
     print(distance)
     if distance < 0.5:
       break
     time.sleep(0.01)
-  r.stop()
+  robot.stop()
 
 
 def random_move():

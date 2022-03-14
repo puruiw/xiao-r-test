@@ -12,7 +12,6 @@ class Controller:
         self._robot.init()
     
     def __call__(self, twist:Twist):
-        rospy.logerr(self._robot)
         rospy.logdebug(f"{rospy.get_caller_id()}: got {twist}")
         if twist.linear.x > 0:
             self._robot.start_forward()
