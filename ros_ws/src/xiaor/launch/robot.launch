@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <launch>
     <node name="usb_cam0" pkg="usb_cam" type="usb_cam_node"/>
+    <node name="teleop_controller" pkg="xiaor" type="teleop_controller.py" output="screen" launch-prefix="/usr/bin/env python" respawn="false"/>
 </launch>

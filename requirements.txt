@@ -1,3 +1,4 @@
+opencv-python
+rospkg
 RPi.GPIO
 smbus-cffi
-opencv-python
