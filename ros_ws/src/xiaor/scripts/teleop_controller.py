@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import time
+
 import rospy
 from geometry_msgs.msg import Twist
 
@@ -21,8 +23,8 @@ class Controller:
             self._robot.start_turn_left()
         elif twist.angular.z < 0:
             self._robot.start_turn_right()
-        busy_wait(0.1)
-        self._robot.stop()
+        else:
+            self._robot.stop()
 
 
 def listener():
