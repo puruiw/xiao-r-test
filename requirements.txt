@@ -1,3 +1,5 @@
+gnupg
+pycryptodomex
 opencv-python
 rospkg
 RPi.GPIO
