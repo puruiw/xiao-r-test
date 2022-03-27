@@ -25,11 +25,21 @@ class Controller:
             self._robot.start_turn_right()
         else:
             self._robot.stop()
+    
+    def shutdown(self):
+        rospy.loginfo("Shutting down.")
+        self._robot.stop()
+        self._robot.cleanup()
 
 
 def listener():
     rospy.init_node('xiaor_teleop_controller')
     controller = Controller()
+
+    def shutdown_callback():
+        controller.shutdown()
+    rospy.on_shutdown(shutdown_callback)
+
     rospy.Subscriber("xiaor_command", Twist, controller)
     rospy.spin()
 
