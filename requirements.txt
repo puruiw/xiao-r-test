@@ -1,6 +1,11 @@
-gnupg
-pycryptodomex
-opencv-python
-rospkg
 RPi.GPIO
+gnupg
+matplotlib
+notebook
+numpy
+opencv-python
+pandas
+pillow
+pycryptodomex
+rospkg
 smbus-cffi
